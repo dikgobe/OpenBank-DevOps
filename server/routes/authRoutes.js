@@ -4,7 +4,16 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
-const { protect } = require("../middleware/authMiddleware");
+const { protect } = require("../middleware/authMiddleware.js");
+
+// debugging
+console.log("--- DEBUGGING START ---");
+console.log("Express Router exists:", !!router);
+console.log("Protect Middleware:", typeof protect);
+console.log("User Model:", typeof User);
+console.log("--- DEBUGGING END ---");
+
+//-------------------------------------------------
 
 // Helper function to generate JWT
 const generateToken = (id) => {
